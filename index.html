@@ -1,0 +1,41 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html ng-app="miniRouting">
+  <head>
+      <title> Mini-Routing</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+
+  <!-- apply our angular app to our site -->
+  <body>
+    
+    <div class="menu">
+        <ul>
+            <li><a ui-sref="home">Home</a></li>
+            <li>
+                Products
+                <ul>
+                    <li><a ui-sref="products({id: 'shoes'})">Shoes</a></li>
+                    <li><a ui-sref="products({id: 'socks'})">Socks</a></li>
+                </ul>
+            </li>
+            <li><a ui-sref="settings"> Settings </a></li>
+        </ul>
+    </div>
+
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <div class="view-container">
+      <ui-view></ui-view>
+    </div>
+
+    <!-- JS (load angular, ui-router, and our custom js file) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/home/homeCtrl.js"></script>
+    <script src="js/products/productsCtrl.js"></script>
+    <script src="js/products/productsService.js"></script>
+    <script src="js/settings/settingsCtrl.js"></script>
+  </body>
+</html>
